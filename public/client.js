@@ -25,9 +25,11 @@ $(document).ready(function () {
     $('#clear').on('click', function () {
         $('#inputOne').val('');
         $('#inputTwo').val('');
-        $('#displayResult').html('Enter 2 numbers then select a calculation type');
+        $('#displayResult').replaceWith('<div id="displayResult">' + 'Enter 2 numbers then select a calculation type' + '</div>');
 
     });
+
+    
 
 });//end $(document).ready
 
@@ -44,10 +46,8 @@ function getMathResult() {
 
 function displayResult(result) {
     $('#displayResult').empty();
-    //result = value
-    console.log(result);
     $('#displayResult').html('Enter 2 numbers then select a calculation type');
-    if (typeof result === 'number') {
+    if (typeof result == 'number') {
         $('#displayResult').html('That equals ' + result);
     }
 };// end displayResult()

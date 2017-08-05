@@ -20,7 +20,15 @@ $(document).ready(function () {
                 getMathResult();
             }
         })//end ajax POST  
-    })//end event listener  
+    })//end event listener
+
+    $('#clear').on('click', function () {
+        $('#inputOne').val('');
+        $('#inputTwo').val('');
+        $('#displayResult').html('Enter 2 numbers then select a calculation type');
+
+    });
+
 });//end $(document).ready
 
 function getMathResult() {
@@ -42,6 +50,6 @@ function displayResult(result) {
     if (typeof result === 'number') {
         $('#displayResult').html('That equals ' + result);
     }
+};// end displayResult()
 
 
-}

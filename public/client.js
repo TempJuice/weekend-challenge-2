@@ -16,8 +16,8 @@ $(document).ready(function () {
             url: '/math',
             data: domMathObject,
             success: function (response) {
-                console.log(response); 
-                getMathResult();    
+                console.log(response);
+                getMathResult();
             }
         })//end ajax POST  
     })//end event listener  
@@ -29,7 +29,19 @@ function getMathResult() {
         url: '/math',
         success: function (response) {
             response = response[0];
-            console.log(response);
+            displayResult(response);
         }
-    })
-};
+    })//end ajax GET
+};// end getMathResult()
+
+function displayResult(result) {
+    $('#displayResult').empty();
+    //result = value
+    console.log(result);
+    $('#displayResult').html('Enter 2 numbers then select a calculation type');
+    if (typeof result === 'number') {
+        $('#displayResult').html('That equals ' + result);
+    }
+
+
+}

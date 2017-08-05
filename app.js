@@ -13,11 +13,11 @@ function calculate(prop1, prop2, prop3) {
 	if (prop3 === 'add') {
 		mathResult = [+prop1 + +prop2];
 	}else if (prop3 === 'subtract') {
-		mathResult = +prop1 - +prop2;
+		mathResult = [+prop1 - +prop2];
 	}else if (prop3 === 'multiply') {
-		mathResult = +prop1 * +prop2;
+		mathResult = [+prop1 * +prop2];
 	}else{
-		mathResult = +prop1 / +prop2;
+		mathResult = [(+prop1 / +prop2)];
 	};
 	return mathResult;	
 };
